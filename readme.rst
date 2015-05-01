@@ -67,3 +67,10 @@ Acknowledgement
 
 The CodeIgniter team would like to thank EllisLab, all the
 contributors to the CodeIgniter project and you, the CodeIgniter user.
+
+***************
+To be honest
+***************
+
+In fact, I don't think it as a good frame for me. I'd like to use Python.
+But first of all, I have to learn Python lol.
