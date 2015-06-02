@@ -1,5 +1,6 @@
 body {
 	height: 100%;
+	font-family: 'Shadows Into Light';
 }
 #homeContainer {
 	height: 100%;
@@ -37,15 +38,18 @@ body {
 	background: #fff;
 }
 #menuClass>li:first-child {
-	padding-top: 25px;
+	padding-top: 10px;
 }
 #menuClass>li:last-child {
-	padding-bottom: 10px;
+	padding-top: 102px;
 }
 #menuClass>li {
 	padding-top: 29%;
-	padding-bottom: 29%;
+	padding-bottom: 32.5%;
 	font-size: 25px;
+}
+#menuClass div {
+	display: inline-block;
 }
 #menuClass h1:after {
 	content: "/";
@@ -53,7 +57,6 @@ body {
 	color: #ccc;
 }
 #menuClass h1 {
-	font-family: 'Shadows Into Light';
 	display: inline-block;
 	font-size: 25px;
 }
@@ -159,4 +162,13 @@ body {
 	-webkit-transform-origin: 35px 310px;
 	-o-transform: rotate(150deg);
 	-o-transform-origin: 35px 310px;
+}
+.menuContentLi:after {
+	margin-left: 10px;
+	content: '/';
+	color: #ddd;
+}
+.menuContentLi {
+	display: inline-block;
+	margin-right: 10px;
 }
