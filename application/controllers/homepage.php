@@ -22,11 +22,14 @@ class Homepage extends CI_Controller {
 	{
 		$this->load->helper('url');
 		$data['page'] = $page;
-		if ($page == 'home')
-			$this->load->view('frontend/'.$page);
-		else {
+		if ($page != 'home') {
 			$this->load->view('frontend/header');
-			$this->load->view('frontend/content', $data);
 		}
+		$this->load->view('frontend/'.$page);
+	}
+	public function admin($page = 'login')
+	{
+		$this->load->helper('url');
+		$this->load->view("backend/".$page);
 	}
 }

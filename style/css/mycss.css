@@ -1,6 +1,7 @@
 body {
 	height: 100%;
 	font-family: 'Shadows Into Light';
+	background-color: #eee;
 }
 #homeContainer {
 	height: 100%;
@@ -34,8 +35,8 @@ body {
 	display: block;
 	width: 350px;
 	height: 1px;
-	margin: 20px 0 -35px -360px;
-	background: #fff;
+	margin: 20px 0 -35px -370px;
+	background: #aaa;
 }
 #menuClass>li:first-child {
 	padding-top: 10px;
@@ -45,7 +46,7 @@ body {
 }
 #menuClass>li {
 	padding-top: 29%;
-	padding-bottom: 32.5%;
+	padding-bottom: 33.44%;
 	font-size: 25px;
 }
 #menuClass div {
@@ -64,6 +65,8 @@ body {
 	text-decoration: none;
 }
 .menuContent {
+	width: 400px;
+	margin-left: -80px;
 	position: absolute;
 }
 .pull {
@@ -74,7 +77,7 @@ body {
 	width: 20px;
 	height: 20px;
 	border-radius: 10px;
-	background: white;
+	background: #aaa;
 }
 .pullCircle:before {
 	float: left;
@@ -83,7 +86,7 @@ body {
 	width: 300px;
 	height: 1px;
 	margin: 20px 10px;
-	background: white;
+	background: #aaa;
 }
 #pull1:before {
 	width: 355px;
@@ -168,7 +171,28 @@ body {
 	content: '/';
 	color: #ddd;
 }
-.menuContentLi {
-	display: inline-block;
-	margin-right: 10px;
+
+
+/* CONTENT PAGE */
+#content {
+	margin-top: 20px;
+}
+.content-paper {
+	padding: 10px;
+	padding-top: 1px;
+	min-height: 100px;
+	background-color: #fff;
+	border-radius: 5px;
+}
+
+
+/* login page */
+#login-form-container {
+	margin-top: 15%;
+}
+#login-form {
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 20px;
 }

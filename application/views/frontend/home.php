@@ -10,14 +10,14 @@
 	<title>BlankmanP</title>
 	<link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="<?php echo $cssUrl?>bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo $cssUrl?>bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo $cssUrl?>mycss.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo $cssUrl?>font-awesome.min.css">
 	<script type="text/javascript" src="<?php echo $jsUrl?>jquery.min.js"></script>
 </head>
 <body>
 	<div class="container-fluid">
-		<div class="container" id="homeContainer">
+		<div class="container" style="min-width: 1180px" id="homeContainer">
 			<div class="col-md-2" id="homeTitle">
 				<img src="<?php echo $imgUrl?>blogIcon.jpg" alt="icon" class="img-circle">
 				<h1>blankmanP</h1> 
@@ -31,28 +31,36 @@
 				<ul id="menuClass">
 					<li>
 						<div class="dropdown">
-							<h1 class="dropdownTitle" id="webDrop"><a href="">WEBSITE</a></h1>
-							<ul class="menuContent" dropby="webDrop">
-								<li class="menuContentLi pull-left">test</li>
-								<li class="menuContentLi pull-left">test</li>
-								<li class="menuContentLi pull-left">test</li>
+							<h1 class="dropdownTitle" id="webDrop"><a href="#">WEBSITE</a></h1>
+							<ul class="menuContent list-inline" dropby="webDrop">
+								<li class="menuContentLi pull-left"><a href="http://www.quillwrite.com">quillwrite</a></li>
+								<li class="menuContentLi pull-left"><a href="http://www.me.uestc.edu.cn/stu">UESTC</a></li>
+								<li class="menuContentLi pull-left"><a href="http://www.zjdaopu.com">zjdaopu</a></li>
 							</ul>
 						</div>
 						<div class="dropdown">
 							<h1 class="dropdownTitle" id="codeDrop"><a href="">CODE</a></h1>
-							<!--ul class="menuContent" dropby="codeDrop">
-								<li class="menuContentLi pull-left">lalala</li>
-								<li class="menuContentLi pull-left">lalala</li>
-								<li class="menuContentLi pull-left">lalala</li>
-							</ul-->
+							<ul class="menuContent list-inline" dropby="codeDrop">
+								<li class="menuContentLi pull-left"><a href="https://github.com/blankmanp/snake">Snake</a></li>
+								<li class="menuContentLi pull-left"><a href="https://github.com/blankmanp/work">My Blog</a></li>
+							</ul>
 						</div>
 					</li>
 					<li>
 						<div class="dropdown">
-							<h1 class="dropdownTitle" id="blogDrop"><a href="">BLOG</a></h1>
+							<h1 class="dropdownTitle" id="blogDrop"><a href="<?php echo base_url()?>blog/content.html">BLOG</a></h1>
+							<ul class="menuContent list-inline" dropby="webDrop">
+								<li class="menuContentLi pull-left"><a href="">Javascript  <span class="badge">42</span></a></li>
+								<li class="menuContentLi pull-left"><a href="">HTML5  <span class="badge">42</span></a></li>
+								<li class="menuContentLi pull-left"><a href="">CSS3 <span class="badge">42</span></a></li>
+							</ul>
 						</div>
 						<div class="dropdown">
 							<h1 class="dropdownTitle" id="gameDrop"><a href="">GAME</a></h1>
+							<ul class="menuContent list-inline" dropby="webDrop">
+								<li class="menuContentLi pull-left"><a href="">Snake</a></li>
+								<li class="menuContentLi pull-left"><a href="">2048</a></li>
+							</ul>
 						</div>
 					</li>
 					<li>
@@ -64,7 +72,9 @@
 				<script>
 					$(".menuContent").hide()
 					.parent().hover(function() {
-						console.log("hi");
+						$(this).find(".menuContent").slideDown(100);
+					}, function() {
+						$(this).find(".menuContent").slideUp(100);
 					})
 				</script>
 			</div>
