@@ -10,8 +10,20 @@ default: &default
   timeout: 5000
 
 development:
-  <<: *default
-  database: db/development.sqlite3
+    adapter: mysql2
+    encoding: utf8
+    pool: 2
+    reconnect: true
+    #host: rdsmzuau2mzuau2.mysql.rds.aliyuncs.com
+    host: localhost
+    database: test
+    username: root
+    password:
+    #username: bb
+    #password: runbigbang
+    write_timeout: 5
+    read_timeout: 3
+    wait_timeout: 20
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

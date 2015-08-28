@@ -32,9 +32,9 @@
           <div class="dropdown">
             <h1 class="dropdownTitle" id="blogDrop"><a href="/blog">BLOG</a></h1>
             <ul class="menuContent list-inline" dropby="webDrop">
-              <li class="menuContentLi pull-left"><a href="">Javascript  <span class="badge">42</span></a></li>
-              <li class="menuContentLi pull-left"><a href="">HTML5  <span class="badge">42</span></a></li>
-              <li class="menuContentLi pull-left"><a href="">CSS3 <span class="badge">42</span></a></li>
+              <% @types.each do |type| %>
+                  <li class="menuContentLi pull-left"><a href="/blog/<%= type.id %>"><%= type.name %><span class="badge"><%= type.num %></span></a></li>
+              <% end %>
             </ul>
           </div>
           <div class="dropdown">
@@ -46,14 +46,18 @@
           </div>
         </li>
         <li>
-          <h1><a href="https://plus.google.com/101549408884906873125/posts">GOOGLE+</a></h1>
-          <h1><a href="https://twitter.com/blankman_p">TWITTER</a></h1>
-          <h1><a href="https://github.com/blankmanp">GITHUB</a></h1>
+          <h1><a href="https://plus.google.com/101549408884906873125/posts"><i class="fa fa-google-plus"></i></a></h1>
+          <h1><a href="https://twitter.com/blankman_p"><i class="fa fa-twitter"></i></a></h1>
+          <h1><a href=""><i class="fa fa-weibo"></i></a></h1>
+          <h1><a href=""><i class="fa fa-qq"></i></a></h1>
+          <h1><a href=""><i class="fa fa-steam-square"></i></a></h1>
+          <h1><a href="https://github.com/blankmanp"><i class="fa fa-github"></i></a></h1>
         </li>
       </ul>
       <script>
           $(".menuContent").hide()
                   .parent().hover(function() {
+                      $(".menuContent").hide();
                       $(this).find(".menuContent").slideDown(100);
                   }, function() {
                       $(this).find(".menuContent").slideUp(100);
