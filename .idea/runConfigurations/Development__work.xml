@@ -1,3 +1,4 @@
+<component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Development: work" type="RailsRunConfigurationType" factoryName="Rails">
     <predefined_log_file id="RUBY_RAILS_SERVER" enabled="true" />
     <module name="work" />
