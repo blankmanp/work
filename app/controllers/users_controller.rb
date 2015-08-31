@@ -72,6 +72,7 @@ class UsersController < ApplicationController
 	def logout
 		session[:username] = nil
 		session[:user_id] = nil
+		render json: 1
 	end
 
 end

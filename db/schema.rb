@@ -19,12 +19,10 @@ ActiveRecord::Schema.define(version: 20150828043655) do
     t.text     "content",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.integer  "type",       limit: 4,     null: false
   end
 
   create_table "types", force: :cascade do |t|
     t.string   "name",       limit: 255
-    t.integer  "num",        limit: 4,   null: false
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
@@ -39,7 +37,7 @@ ActiveRecord::Schema.define(version: 20150828043655) do
   create_table "users", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "password",   limit: 255
-    t.datetime "login_at",               null: false
+    t.date     "login_at"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end

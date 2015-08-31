@@ -1,5 +1,4 @@
 <div class="container-fluid">
-  <%= @info %>
   <div class="path col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-3 col-lg-8 col-md-8 col-sm-8 col-xs-12">
     <ol class="breadcrumb">
       <li><a href="/">Home</a></li>
@@ -9,7 +8,7 @@
   <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-3 col-lg-2 col-md-2 col-sm-2 col-xs-3 side-nav">
     <div class="list-group">
       <div class="list-group-item">
-        <%= image_tag 'blogIcon.jpg', :class => 'img-circle center-block' %>
+      <img alt="Blogicon" src="/assets/blogIcon.jpg" class="img-circle center-block">
         <h4 class="text-center">blankmanp</h4>
       </div>
       <% @types.each do |type| %>
@@ -31,4 +30,4 @@
      <% end %>
   <% end %>
   </div>
-</div>
+</div> 
