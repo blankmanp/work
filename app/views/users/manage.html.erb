@@ -11,13 +11,40 @@
   </div>
 </header>
 <div id="manage-content" class="center-block">
-	<div class="pull-left" id="manage-type-menu"></div>
+	<div class="pull-left" id="manage-type-menu">
+		div#
+	</div>
 	<div class="pull-right" id="manage-blog-content"></div>
 	<div class="clearfix"></div>
 </div>
 
 
 <script>
+	(function() {
+		//存储已通过ajax得到的博文内容
+		var ajaxBlog = [];
+		var TypeList = React.createClass({
+			render: function() {},
+			clickType: function() {}
+		});
+		var TypeAddBtn = React.createClass({
+			render: function() {},
+			addType: function() {}
+		});
+		var TypeApp = React.createClass({
+			render: function() {},
+			deleteType: function() {},
+		});
+		var BlogTitle = React.createClass({
+			render: function() {}
+		});
+		var BlogContent = React.createClass({
+			render: function() {}
+		});
+		var BlogGroup = React.createClass({
+			render: function() {}
+		})
+	})()
 	var manage = (function($) {
 		var jqueryMap = {}, 
 			logout, 

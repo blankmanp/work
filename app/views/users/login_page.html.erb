@@ -34,10 +34,16 @@
             <div className="form-group">
               <label htmlFor={this.props.inputName} className="control-label col-md-4 col-sm-4 col-xs-4">{this.props.labelName}</label>
               <div className="col-md-6 col-sm-6 col-xs-6">
-                <input type={this.props.typeName} className="form-control" id={this.props.inputName} name={this.props.inputName} placeholder={this.props.inputName} />
+                <input type={this.props.typeName} className="form-control" id={this.props.inputName} name={this.props.inputName} placeholder={this.props.inputName} onChange={this.handleChange} />
               </div>
             </div>
           )
+        },
+        getInitialState: function() {
+          return {value: ''};
+        },
+        handleChange: function(e) {
+          this.setState({value: e.target.value})
         }
       });
       var SubmitBtn = React.createClass({
@@ -54,16 +60,37 @@
       var FormGroup = React.createClass({
         render: function() {
           return (
-            <form className="form-horizontal">
-              <InputFormGroup inputName="admin" labelName="账户名" typeName="text" />
-              <InputFormGroup inputName="password" labelName="密码" typeName="password" />
+            <form onSubmit={this.handleSubmit} className="form-horizontal">
+              <InputFormGroup inputName="admin" labelName="账户名" typeName="text" ref='admin' />
+              <InputFormGroup inputName="password" labelName="密码" typeName="password" ref="password" />
               <SubmitBtn />
               <div className="clearfix"></div>
             </form>
         );
         },
-        handleSubmit: function() {},
-        checkInput: function() {}
+        handleSubmit: function(e) {
+          e.preventDefault();
+          var admin = this.refs.admin.state.value, psw = this.refs.password.state.value;
+          if (!admin) {
+            return false;
+            //用户名为空
+          }
+          else if (!psw) {
+            return false;
+            //密码为空
+          }
+          else {
+            $.post('/login', {username: admin, password: psw}, function(data) {
+              if (data.success) {
+                window.location.href = '/blankmanp/manage';
+              }
+              else {
+                alert(data.info);
+                return false;
+              }
+            })
+          }
+        }
       })
       React.render(<FormGroup />, document.getElementById('login'))
     })()
