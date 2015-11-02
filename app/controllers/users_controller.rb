@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-	before_filter :check_login, :except =>[:index, :show_blog, :login_page, :login]
+	before_filter :check_login, :except =>[:index, :show_blog, :login_page, :login, :auto_complete]
 
 	def index
 		@types = Type.all
@@ -73,6 +73,9 @@ class UsersController < ApplicationController
 		session[:username] = nil
 		session[:user_id] = nil
 		render json: 1
+	end
+
+	def auto_complete
 	end
 
 end

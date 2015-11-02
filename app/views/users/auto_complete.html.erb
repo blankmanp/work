@@ -1,0 +1,62 @@
+<div id="autoComplete"></div>
+<script type="text/jsx">
+	var InputText = React.createClass({
+		render: function() {
+			return (
+				<form>
+					<input type="text" onChange={this.handleChange} ref="inputText" />
+				</form>
+			);
+		},
+		handleChange: function(e) {
+			this.props.handleInput(e.target.value);
+		}
+	});
+	var AutoCompleteSection = React.createClass({
+		render: function() {
+			return (<div className="autoCompleteSection">{this.props.section}</div>);
+		}
+	});
+	var AutoCompleteContent = React.createClass({
+		render: function() {
+			var arr = [];
+			this.props.results.forEach(function(result) {
+				arr.push(<AutoCompleteSection section={result} />)
+			})
+			return (
+				<div id="autoCompleteContent">
+					{arr}
+				</div>
+			)
+		}
+	});
+	var AutoCompleteApp = React.createClass({
+		render: function() {
+			var results = [];
+			if (this.state.searchText) {
+				this.props.data.forEach(function(item) {
+					if (item.indexOf(this.state.searchText) !== -1) {
+						results.push(item)
+					}
+				}.bind(this))
+			}
+			return (
+				<div>
+					<InputText handleInput={this.handleChange} searchText={this.state.searchText} />
+					<AutoCompleteContent results={results} />
+				</div>
+			)
+		},
+		getInitialState: function() {
+			return {
+				searchText: ''
+			}
+		},
+		handleChange: function(text) {
+			this.setState({
+				searchText: text
+			})
+		}
+	})
+	React.render(<AutoCompleteApp data={['abc', 'apple', 'test', 'fun', 'hhh']} />, document.getElementById("autoComplete"));
+</script>
